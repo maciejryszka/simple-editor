@@ -6,15 +6,17 @@ import "../scss/main.scss";
 
 /* place your code below */
 
-const textarea = document.querySelector(".main__text--js");
-const loadButton = document.querySelector(".main__button--load-js");
-const saveButton = document.querySelector(".main__button--save-js");
+const textarea = document.querySelector(".form__text--js");
+const loadButton = document.querySelector(".load--js");
+const saveButton = document.querySelector(".save--js");
 
-saveButton.addEventListener("click", () => {
+saveButton.addEventListener("click", (e) => {
+  e.preventDefault();
   localStorage.setItem("text", textarea.value);
 });
 
-loadButton.addEventListener("click", () => {
+loadButton.addEventListener("click", (e) => {
+  e.preventDefault();
   textarea.value = localStorage.getItem("text");
 });
 

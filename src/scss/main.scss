@@ -1,55 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import "~normalize.css";
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   background: #121232;
   font-family: "Open Sans", sans-serif;
   color: #727279;
 }
 
-.main {
-  width: 80vw;
+.editor {
+  width: 100%;
+  max-width: 736px;
   margin: 0 auto;
-  display: grid;
-  grid-template-rows: 184px 80px 8px 480px 16px 40px;
-  grid-template-columns: repeat(12, 1fr);
-
-  &__button {
-    margin-left: auto;
-    width: 64px;
-    height: 40px;
-    grid-row: 6;
-    border-radius: 5px;
-    &--load {
-      grid-column: -6;
-    }
-    &--save {
-      grid-column: -5;
-    }
-  }
-
   &__heading {
     margin: 0;
-    height: 80px;
-    grid-row: 2;
-    grid-column: 5 / -5;
     text-align: center;
-    line-height: 64px;
+    font-weight: 600;
     font-size: 44px;
+    line-height: 64px;
   }
+}
 
+.form {
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
   &__text {
-    height: 480px;
-    padding: 15px;
-    grid-row: 4;
-    grid-column: 4 / -4;
-    border-radius: 5px;
+    width: 100%;
+    margin: 12px 0;
+    padding: 16px;
     resize: none;
+    background-color: #fafafc;
+    border: 1px solid #121232;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.button {
+  width: 65px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #fafafc;
+  border: 1px solid #121232;
+  border-radius: 4px;
+  &--save {
+    margin-left: 32px;
   }
 }
